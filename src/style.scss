@@ -1,0 +1,180 @@
+body {
+    margin: 20px;
+    padding: 0px;
+    border: 1px solid grey;
+
+    header {
+        display: flex;
+        flex-direction: column;
+
+        .toolbar {
+            background-color: antiquewhite;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;            
+        }
+
+        .page-title {
+            background-color: orange;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+    }
+
+    .page-container {
+        display: flex;        
+
+        nav {
+            flex: 2;
+            background-color: darkolivegreen;
+            color: white;            
+
+            .menu-container {
+               position: sticky;
+               top: 0px;          
+
+                .page-title {
+                    background-color: orange;
+                    color: white;
+                    padding: 20px;
+                    font-size: 24px;
+                }
+
+                .menu-title {
+                    text-align: center;
+                    font-size: 18px;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    padding-top: 14px;
+                }
+
+                ul {
+                    list-style: none;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0;                                 
+
+                    li {
+                        background-color: khaki;
+                        border: 1px solid salmon;
+                        color: darkolivegreen;                        
+                        padding: 6px;  
+                        flex: 0 1 auto;                      
+                    }
+                }
+
+            }
+        }
+
+        main {
+            flex: 5;
+            background-color: gray;
+
+            .list {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+
+                .card {
+                    border: 1px solid black;
+                    background-color: white;
+                    border-radius: 8px;                   
+                    width: 225px;
+                    min-height: 150px;   
+                    margin: 10px;                                 
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    img {
+                        width: 96px;
+                        border-radius: 80px;
+                        padding: 10px;
+                    }
+
+                    .member-name {
+                        text-align: center;
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    
+    $breakpoint-tablet: 768px;
+    @media screen and (max-width: $breakpoint-tablet) {
+        header {
+            display: none;
+        }
+
+       .page-container {
+           flex-direction: column;         
+           .menu-title {
+               display: none;
+           }
+
+           nav {               
+            .menu-container {                                    
+                    ul {
+                       
+                        flex-direction: row;
+                        justify-content: space-between;
+
+                        li {
+                            flex: 1;
+                            margin: 6px;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+
+            main {
+                    
+                .list {
+                    flex-direction: column;
+                    align-items: center;
+
+                    .card {
+                        flex-direction: row;
+                        
+                        margin: 0 auto;
+                        width: 100%;
+
+                        .member-name {
+                            font-size: 24px;
+                            justify-self: center;
+                        }
+                    }
+                }
+            }
+
+       }
+    }
+
+    $breakpoint-sm: 475px;
+    @media screen and (max-width: $breakpoint-sm) {
+        .page-container{
+            main {
+                        
+                .list {
+                    
+
+                    .card {
+                        flex-direction: column;
+                        
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        background-color: orange;
+        color: white;
+        padding: 10px;
+        font-size: 18px;
+    }
+}

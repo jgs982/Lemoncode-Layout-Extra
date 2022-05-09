@@ -1,0 +1,14 @@
+{
+  "name": "lemoncode-layout-extra",
+  "version": "1.0.0",
+  "description": "Layout Extra del Master FrontEnd Lemoncode",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jesús Guerrero Soto",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.51.0"
+  }
+}
